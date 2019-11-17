@@ -7,6 +7,6 @@ def get_twitter_followers(url):
     soup = BeautifulSoup(page.content, 'html.parser')
     abonnes = list(soup.find(class_="ProfileNav-item ProfileNav-item--followers").children)[1]
     detail=list(abonnes.children)[5]
-    return(detail.text)
+    return(detail['data-count'])
 
-print(get_twitter_followers('https://twitter.com/KMbappe'))
+print(get_twitter_followers('https://twitter.com/zidaneofficial_?lang=fr'))
